@@ -1,6 +1,8 @@
 # the Comments controller
 # standard order CRUD actions in controllers are: index, show, new, edit, create, update, and destroy. 
 class CommentsController < ApplicationController
+  http_basic_authenticate_with name: "ray", password: "secret", only: :destroy
+
   def create
     @article = Article.find(params[:article_id])
   # each request for a comment has to keep track of the article to which the comment is attached - uses the find method of the Article model to get the article in question.
