@@ -1,3 +1,4 @@
+# the test for the Comments controller
 require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
