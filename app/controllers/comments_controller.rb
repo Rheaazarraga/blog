@@ -10,6 +10,13 @@ class CommentsController < ApplicationController
   # once the comment is created, the user is sent back to the original article with the above path
   end
 
+  def destroy
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
+    @comment.destroy
+    redirect_to article_path(@article)
+  end
+  
   private
     def comment_params
       params.require(:comment).permit(:commenter, :body)
