@@ -1,4 +1,4 @@
-<%= form _for @article do |f| %>
+<%= form_for @article do |f| %>
 
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -27,6 +27,6 @@ prohibited
 
   <p>
     <%= f.submit %>
-  <.p>
+  </p>
 
 <% end %>
