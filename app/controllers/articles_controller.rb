@@ -1,4 +1,5 @@
 # A controller is a class that is defined to inherit from ApplicationController. Methods defined in this class will become the actions for this controller. These actions will perform CRUD operations on the articles within our system
+# Standard order CRUD actions in controllers are: index, show, new, edit, create, update, and destroy. 
 
 class ArticlesController < ApplicationController
   def index
@@ -35,6 +36,13 @@ class ArticlesController < ApplicationController
       else
         render 'edit'
       end
+    end
+
+    def destroy
+      @article = Article.find(params[:id])
+      @article.destroy
+
+      redirect_to articles_path
     end
 
   private
