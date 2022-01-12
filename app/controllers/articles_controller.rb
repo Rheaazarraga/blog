@@ -1,6 +1,10 @@
 # A controller is a class that is defined to inherit from ApplicationController. Methods defined in this class will become the actions for this controller. These actions will perform CRUD operations on the articles within our system
 
 class ArticlesController < ApplicationController
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def new
   end
 
@@ -13,6 +17,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, text)
+      params.require(:article).permit(:title, :text)
     end
 end
