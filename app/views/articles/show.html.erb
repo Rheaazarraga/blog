@@ -7,5 +7,7 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Back', articles_path %>
+
 <%# this link allows the user to go back and view the list of articles when viewing a single article/ index %>
+
