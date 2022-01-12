@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
+  end
 
     def update
       @article = Article.find(params[:id])
@@ -34,10 +35,10 @@ class ArticlesController < ApplicationController
       else
         render 'edit'
       end
-  end
+    end
 
   private
     def article_params
       params.require(:article).permit(:title, :text)
     end
-end
+  end
