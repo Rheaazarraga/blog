@@ -25,7 +25,15 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
-  # use render instead of redirect_to when save returns false. The render method is used so that the @article object is passed back to the new template when it is rendered - rendering is done within the same request as the form submission, whereas the redirect_to will tell the browser to issue another request
+
+    def update
+      @article = Article.find(params[:id])
+
+      if @article.update(article_params)
+        redirect_to @article
+      else
+        render 'edit'
+      end
   end
 
   private
