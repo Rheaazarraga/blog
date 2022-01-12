@@ -1,9 +1,11 @@
 <p>
-  <strong> Title: </strong>
+  <strong>Title:</strong>
   <%= @article.title %>
 </p>
-
+ 
 <p>
-  <strong>Text: </strong>
+  <strong>Text:</strong>
   <%= @article.text %>
 </p>
+<%= link_to 'Back', articles_path %>
+<%# this link allows the user to go back and view the list of articles when viewing a single article/ index %>
